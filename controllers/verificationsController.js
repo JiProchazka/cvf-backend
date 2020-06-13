@@ -9,7 +9,7 @@ exports.create = async (req, res) => {
   var item = new Verification(template);
   const result = await item.save();
 
-  mail.link({ to: req.body.email, id });
+  mail.link({ to: req.body.email, id: result.id });
 
   return res.json({ id: result.id });
 };
