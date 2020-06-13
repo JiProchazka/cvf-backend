@@ -1,6 +1,7 @@
 export const template = {
-  companyName: "",
+  property: "",
   identificator: "",
+  email: "",
   mandatoryFields: {
     companyName: "",
     propertyName: "",
