@@ -3,8 +3,9 @@ const Verification = require("../models/verification");
 const mail = require("../lib/mail");
 
 exports.create = async (req, res) => {
-  template.template.companyName = req.body.companyName;
+  template.template.property = req.body.property;
   template.template.identificator = req.body.identificator;
+  template.template.email = req.body.email;
 
   var item = new Verification(template);
   const result = await item.save();
