@@ -1,4 +1,4 @@
-export const template = {
+exports.template = {
   property: "",
   identificator: "",
   email: "",
