@@ -2,6 +2,8 @@ export const template = {
   property: "",
   identificator: "",
   email: "",
+  region: "",
+  merchantProvider: "",
   mandatoryFields: {
     companyName: "",
     propertyName: "",
