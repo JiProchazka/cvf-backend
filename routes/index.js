@@ -15,10 +15,14 @@ router.get("/verifications/:id", catchErrors(verificationsController.get));
 router.put("/verifications/:id", catchErrors(verificationsController.update));
 
 router.get("/files/:file", filesController.get);
-router.post(
-  "/files/upload/:id/:fileType",
-  upload.single("file"),
-  catchErrors(filesController.upload)
-);
+try {
+  router.post(
+    "/files/upload/:id/:fileType",
+    upload.single("file"),
+    filesController.upload
+  );
+} catch (err) {
+  console.log(err);
+}
 
 module.exports = router;
