@@ -30,6 +30,7 @@ app.use(function (req, res, next) {
 app.use(
   bodyParser.json({
     reviver: reviveDates,
+    limit: "15mb",
   })
 );
 app.use(bodyParser.urlencoded({ extended: true }));
