@@ -22,6 +22,6 @@ exports.get = async (req, res) => {
 
 exports.update = async (req, res) => {
   delete req.body._id;
-  await Verification.findOneAndUpdate(req.params.id, req.body);
-  return res.json(req.body);
+  await Verification.findOneAndUpdate({ _id: req.params.id }, req.body);
+  return res.status(200).send();
 };
