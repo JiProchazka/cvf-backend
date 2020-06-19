@@ -2,8 +2,8 @@ exports.template = {
   property: "",
   identificator: "",
   email: "",
-  region: "",
-  merchantProvider: "",
+  region: "World",
+  merchantProvider: "Stripe",
   mandatoryFields: {
     companyName: "",
     propertyName: "",
