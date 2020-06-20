@@ -12,12 +12,16 @@ exports.create = async (req, res) => {
 
   mail.link({ to: req.body.email, id: result.id });
 
-  return res.json({ id: result.id });
+  return res.json(result);
 };
 
 exports.get = async (req, res) => {
-  const data = await Verification.findById(req.params.id);
-  return res.json(data.toObject());
+  try {
+    const data = await Verification.findById(req.params.id);
+    return res.json(data.toObject());
+  } catch {
+    return res.status(404).send(`${req.params.id} not found!`);
+  }
 };
 
 exports.update = async (req, res) => {
